@@ -1,0 +1,25 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    command: mysqld --default-authentication-plugin=caching_sha2_password
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: fly_pay
+    ports:
+      - "3306:3306"
+    volumes:
+      - /root/mysql:/var/lib/mysql
+
+  fly-pay:
+    image: general9527/fly-pay:latest
+    container_name: fly-pay
+    volumes:
+      - /root/fly-pay:/var/www/html
+    ports:
+      - "6007:80"
+    depends_on:
+      - mysql
+
+

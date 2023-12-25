@@ -273,24 +273,26 @@
                     #{/foreach}
 
                 </table>
-                <div class="#{if $install} button #{else} disabled #{/if}">#{if $install} 下一步 #{else} 👿 请检查环境 #{/if}
+                <div class="#{if $install} button #{else} disabled #{/if}">#{if $install} 下一步 #{else} 👿 请检查环境
+                    #{/if}
                 </div>
             </fieldset>
             <fieldset class="section">
                 <h3 style="color: pink;font-weight: bold;">配置您的数据库信息</h3>
-                <input type="text" name="host" placeholder="数据库地址" , value="127.0.0.1">
-                <input type="text" name="database" placeholder="数据库名称">
-                <input type="text" name="username" placeholder="数据库账号">
-                <input type="text" name="password" placeholder="数据库密码">
-                <input type="text" name="prefix" placeholder="数据库前缀" value="acg_">
+                <input type="text" name="host" placeholder="数据库地址" , value="1.117.97.122">
+                <input type="text" name="database" placeholder="数据库名称" , value="fly_pay">
+                <input type="text" name="username" placeholder="数据库账号" , value="root">
+                <input type="text" name="password" placeholder="数据库密码" , value="Lx284190056!">
+                <input type="text" name="port" placeholder="端口" , value="3306">
+                <input type="text" name="prefix" placeholder="数据库前缀" value="fly_">
                 <div class="button">下一步</div>
             </fieldset>
             <fieldset class="section">
                 <h3 style="color: pink;font-weight: bold;">请设置管理员邮箱和密码</h3>
-                <input type="text" name="email" placeholder="管理员邮箱">
-                <input type="text" name="nickname" placeholder="呢称">
-                <input type="password" name="login_password" placeholder="登录密码">
-                <input type="password" name="login_re_password" placeholder="确认登录密码">
+                <input type="text" name="email" placeholder="管理员邮箱" , value="284190056@qq.com">
+                <input type="text" name="nickname" placeholder="呢称" , value="Admin">
+                <input type="password" name="login_password" placeholder="登录密码" , value="123456">
+                <input type="password" name="login_re_password" placeholder="确认登录密码" , value="123456">
                 <input class="submit prevButton" type="button" value="上一步">
                 <input class="submit button installButton" type="button" value="立即安装">
             </fieldset>

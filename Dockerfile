@@ -21,6 +21,7 @@ WORKDIR /var/www/html
 
 # 将当前目录的内容复制到容器的 /var/www/html 目录
 COPY . /var/www/html
+RUN chmod -R 777 /var/www/html
 
 # 开放容器的 80 端口，使其可以从容器外部访问
 EXPOSE 80

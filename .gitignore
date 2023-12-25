@@ -5,10 +5,12 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-env/
+env/`
 build/
 dist/
 *.log
+
+.env
 
 # pyenv
 .python-version

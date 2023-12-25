@@ -13,7 +13,7 @@ class SQL
     /**
      * @throws \Kernel\Exception\JSONException
      */
-    public static function import(string $sql, string $host, string $db, string $username, string $password, string $prefix)
+    public static function import(string $sql, string $host, string $db, string $username, string $password, string $prefix,int $port)
     {
         //处理前缀
         $sqlSrc = str_replace('__PREFIX__', $prefix, (string)file_get_contents($sql));
@@ -32,10 +32,15 @@ class SQL
         $dump = new Dump();
         $dump
             ->file($sql . '.process')
-            ->dsn('mysql:dbname=' . $db . ';host=' . $host)
+            ->dsn('mysql:dbname=' . $db . ';host=' . $host . ';port=' . $port)
+//            ->dsn('mysql:dbname=' . $db . ';host=' . $host)
             ->user($username)
             ->pass($password)
             ->tmp($tmp);
+
+        // 打印数据库连接信息
+        error_log('Database connection info: ' . var_export(['mysql:dbname=' . $db . ';host=' . $host, $username, $password], true));
+
         try {
             new Import($dump);
             unlink($sql . '.process');

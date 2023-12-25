@@ -71,6 +71,7 @@ location / {
 ```
 - 配置完成后，访问你的首页，即可开始安装
 - 安装完成后，后台地址是：`https://你的域名/admin`
+  docker run -d --name fly-pay -p 6007:80 general9527/fly-pay:latest
 
 ## 更多支持
 - 交流QQ群：823266410
